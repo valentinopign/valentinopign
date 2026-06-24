@@ -16,6 +16,6 @@ jobs:
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
           plugin_activity: yes
-          plugin_activity_days: 0
+          plugin_activity_days: 14
           plugin_activity_limit: 10
           config_timezone: America/Argentina/Buenos_Aires
