@@ -11,11 +11,10 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
+          filename: github-metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          config_timezone: America/Argentina/Buenos_Aires
           base: header, activity, community, repositories
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          plugin_activity: yes
-          plugin_activity_days: 14
-          plugin_activity_limit: 10
-          config_timezone: America/Argentina/Buenos_Aires
+          plugin_activity_limit: 10s
