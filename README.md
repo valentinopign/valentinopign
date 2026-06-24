@@ -1,2 +1,2 @@
 # valentinoping
-Activity 
+![Metrics](./github-metrics.svg)
