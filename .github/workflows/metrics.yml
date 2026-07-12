@@ -1,20 +1,35 @@
 name: Metrics
+
 on:
-  schedule: [{cron: "0 0 * * *"}]
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
-  push: {branches: ["main"]}
+  push:
+    branches:
+      - main
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
+
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@v3.34.0
         with:
           filename: github-metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
+
           config_timezone: America/Argentina/Buenos_Aires
+
           base: header, activity, community, repositories
+          base_indepth: yes
+
+          repositories_affiliations: owner, collaborator, organization_member
+
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
+
+          plugin_activity: yes
           plugin_activity_limit: 10
