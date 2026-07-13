@@ -24,18 +24,16 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
 
           config_timezone: America/Argentina/Buenos_Aires
-          config_output: verbose
 
           base: header, activity, community, repositories
-          base_indepth: yes
+          base_indepth: no
 
           repositories_affiliations: owner, collaborator, organization_member
 
           plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
+          plugin_isocalendar_duration: half-year
 
-          plugin_activity: yes
-          plugin_activity_limit: 10
-          plugin_activity_visibility: public
-
-          plugins_errors_fatal: yes
+          # Disable because the plugin has an error
+          # plugin_activity: yes
+          # plugin_activity_limit: 10
+          # plugin_activity_visibility: public
