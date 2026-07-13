@@ -3,7 +3,9 @@ name: Metrics
 on:
   schedule:
     - cron: "0 0 * * *"
+
   workflow_dispatch:
+
   push:
     branches:
       - main
@@ -22,6 +24,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
 
           config_timezone: America/Argentina/Buenos_Aires
+          config_output: verbose
 
           base: header, activity, community, repositories
           base_indepth: yes
@@ -33,3 +36,6 @@ jobs:
 
           plugin_activity: yes
           plugin_activity_limit: 10
+          plugin_activity_visibility: public
+
+          plugins_errors_fatal: yes
