@@ -33,7 +33,6 @@ jobs:
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
 
-          # Disable because the plugin has an error
-          # plugin_activity: yes
-          # plugin_activity_limit: 10
-          # plugin_activity_visibility: public
+          plugin_activity: yes
+          plugin_activity_limit: 10
+          plugin_activity_visibility: public
